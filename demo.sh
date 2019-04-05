@@ -8,7 +8,7 @@ vendorPackage="$vendorDir/$package/consulish"
 
 function vendor() {
     mkdir -p "$vendorPackage"
-    rsync -r "$src/consulish" "$(dirname "$vendorPackage")"
+    rsync --exclude "consulish/vendor" -r "$src/consulish" "$(dirname "$vendorPackage")"
 }
 
 function devendor() {
